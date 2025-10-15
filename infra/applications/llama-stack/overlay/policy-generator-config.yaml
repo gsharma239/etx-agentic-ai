@@ -21,6 +21,13 @@ policyDefaults:
   remediationAction: enforce
   recreateOption: IfRequired
   severity: medium
+  tool_runtime:
+      - provider_id: model-context-protocol
+        provider_type: remote::model-context-protocol
+        config: {}
+  tool_groups:
+    - toolgroup_id: mcp::openshift
+      provider_id: model-context-protocol
   standards:
     - NIST SP 800-53
   policyAnnotations: {"argocd.argoproj.io/compare-options": "IgnoreExtraneous",
@@ -28,4 +35,4 @@ policyDefaults:
 policies:
   - name: llama-stack-sno
     manifests:
-      - path: maas/
+      - path: mcp-openshift/
